@@ -168,5 +168,103 @@
 
 
     ?>
+    <?php // exerc. 5
+    $idade = 18; 
+    if ($idade >= 5 && $idade <= 10) {
+        echo "Categoria: Infantil";
+    } elseif ($idade >= 11 && $idade <= 15) {
+        echo "Categoria: Juvenil";
+    } elseif ($idade >= 16 && $idade <= 20) {
+        echo "Categoria: Junior";
+    } elseif ($idade >= 21 && $idade <= 25) {
+        echo "Categoria: Profissional";
+    } else {
+        echo "Fora da faixa etária das categorias";
+    }
+    ?>
+     <?php // exerc. 6
+    $valor = 1;
+    $unidade = "km"; 
+
+    switch($unidade) {
+        case "km":
+            echo "$valor km = " . ($valor * 1000) . " m";
+            break;
+        case "m":
+            echo "$valor m = " . $valor . " m";
+            break;
+        case "cm":
+            echo "$valor cm = " . ($valor / 100) . " m";
+            break;
+        case "mm":
+            echo "$valor mm = " . ($valor / 1000) . " m";
+            break;
+        default:
+            echo "Unidade desconhecida";
+    }
+    ?>
+    <?php // exerc. 7
+    $a = 0;
+    $b = 1;
+
+    echo "$a, $b";
+    while ($b <= 500) {
+        $c = $a + $b;
+        echo ", $c";
+        $a = $b;
+        $b = $c;
+    }
+    <?php // exerc. 8
+$numero = 5; 
+$fatorial = 1;
+$i = $numero;
+
+while ($i > 0) {
+    $fatorial *= $i;
+    $i--;
+}
+
+echo "$numero! = $fatorial";
+?>
+    
+    <?php // exerc. 9
+    $populacaoA = 80000;
+    $populacaoB = 200000;
+    $anos = 0;
+
+    while ($populacaoA <= $populacaoB) {
+        $populacaoA *= 1.03;
+        $populacaoB *= 1.015;
+        $anos++;
+    }
+
+    echo "Serão necessários $anos anos para que a população do país A ultrapasse ou iguale a população do país B.";
+    ?>
+    
+    <?php // exerc. 10
+$numeros = [4, 8, 15, 16, 23]; 
+$soma = 0;
+$i = 0;
+
+while ($i < count($numeros)) {
+    $soma += $numeros[$i];
+    $i++;
+}
+
+$media = $soma / count($numeros);
+
+echo "Soma: $soma<br>";
+echo "Média: $media";
+?>
+    <?php // exerc. 11
+$numero = 5; 
+$i = 1;
+
+echo "Tabuada de $numero:<br>";
+while ($i <= 10) {
+    echo "$numero X $i = " . ($numero * $i) . "<br>";
+    $i++;
+}
+?>
 </body>
 </html>
