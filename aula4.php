@@ -6,61 +6,94 @@
     <title>Document</title>
 </head>
 <body>
-    <?php
-    #Exerc. 1
 
-    $numeros = array(1,2,3,4,5,6,7,8,9,10);
-    echo "O primeiro número é: $numeros[0]</br>";
-    echo "O último número é: $numeros[9]";
+<?php
 
-    #Exerc. 2
+        function calcularNumero($n1,$n2,$tipo) {
+            switch ($tipo) {
+                case '+':
+                    
+                    return $n1 + $n2;
+                
+                case '-':
+                    
+                    return $n1 - $n2;
+                
+                case '*':
+                
+                     return $n1*$n2;
 
+                case '/':
+                
+                    return $n1/$n2;
+                    
+                default:
 
-     ?>
-    <?php
-    #Exerc. 2
+                    echo "Operação inválida";
 
-    $numeros = array(1,2,3,4,5,6,7,8,9,10);
+            }
+        }
+    
+    $n1 = 10;
+    $n2 = 8;
+    $tipo = '*';
+    $resultado = calcularNumero($n1,$n2,$tipo);
+    echo "O resultado da operação é: {$resultado}"
 
-    $soma = 0;
-  
-    for($i = 0; $i < 10; $i++) {
-        $soma+=$numeros[$i];
+?>
+<br>
+<?php
+function imprimePrimo() {
+    for($i = 2; $i <= 100; $i++) { // Começa de 2, pois 0 e 1 não são primos
+        $contagem = 0;
+        for($j = 1; $j <= $i; $j++) { // Corrige o incremento para $j
+            if($i % $j == 0) {
+                $contagem++;
+            }
+        }
+        if($contagem == 2) { // Um número é primo se tem exatamente 2 divisores
+            echo $i . ",";
+        }
+    }
 }
 
-    echo "Soma: $soma";
+imprimePrimo();
+?>
 
-    ?>
-    <?php
-    #Exerc. 3
+<?php
+     
+     function calculasoma($array){
+        $soma = 0;
+        for ($i=0; $i < 5; $i++){
 
-    $numeros = array(23,67,12,89,34,56,78,90,3,45);
+            $soma += $array[$i];
+            
+        }
+        return $soma;
+     }
+ 
+
+$array = [1,45,23,6,76,78];
+$resultado = calculasoma($array);
+ echo "O resultado da soma é: {$resultado}"
+?>
+   
+<?php
     
-    #Exemplo de Bubble sort
-
-    for($i=0; $i<10; $i++){
-        for($j=0; $j <10-$i-1; $j++){
-            if ($numeros[$j] > $numeros[$j+1]) {
-                $temp = $numeros[$j];
-                $numeros[$j] = $numeros[$j+1];
-                $numeros[$j+1] = $temp;
-            }
-         }
-    }
-
-    echo "O menor número é: $numeros[0]";
-    echo "O maior número é: $numeros[9]";
-
-
-    ?>
-    <?php
-    #Exerc. 4 
-    
-    $palavra = array('P', 'R', 'O', 'G', 'R','A','M','A','R');
-    for($i=8; $i >= 0; $i--){
+    function calculafahren($tempc){
         
-        echo $palavra[$i];
-    }
-    ?>
+        $tempf = (9/5) * ($tempc) + 32;
+        
+        return $tempf;
+    } 
+    
+        
+$tempc = 100;
+$resultado = calculafahren($tempc);
+echo "O resultado em fahrenheit:{$resultado}"
+
+
+?>
+
 </body>
 </html>
